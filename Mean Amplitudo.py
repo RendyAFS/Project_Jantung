@@ -1,22 +1,26 @@
-import numpy as np
+import pandas as pd
+from scipy.spatial.distance import cdist
 
-def mean_distance(set1, set2):
-    distances = np.abs(np.subtract.outer(set1, set2))
-    mean = np.mean(distances)
-    return mean
+# Membaca data dari file tes.csv
+data = pd.read_csv("tes.csv")
 
-# Data set
-S1 = [2, 4, 5]
-S2 = [1, 6, 2]
+# Mendapatkan koordinat S1 dan S2
+s1_coordinates = data[['S1_x', 'S1_y']].values
+s2_coordinates = data[['S2_x', 'S2_y']].values
 
-# Mean Jarak S1 - S1
-mean_s1_s1 = mean_distance(S1, S1)
-print("Mean Jarak S1 - S1:", mean_s1_s1)
+# Menghitung mean jarak S1-S1
+s1_s1_distances = cdist(s1_coordinates, s1_coordinates, metric='euclidean')
+mean_s1_s1_distance = s1_s1_distances.mean()
 
-# Mean Jarak S1 - S2
-mean_s1_s2 = mean_distance(S1, S2)
-print("Mean Jarak S1 - S2:", mean_s1_s2)
+# Menghitung mean jarak S1-S2
+s1_s2_distances = cdist(s1_coordinates, s2_coordinates, metric='euclidean')
+mean_s1_s2_distance = s1_s2_distances.mean()
 
-# Mean Jarak S2 - S2
-mean_s2_s2 = mean_distance(S2, S2)
-print("Mean Jarak S2 - S2:", mean_s2_s2)
+# Menghitung mean jarak S2-S2
+s2_s2_distances = cdist(s2_coordinates, s2_coordinates, metric='euclidean')
+mean_s2_s2_distance = s2_s2_distances.mean()
+
+# Menampilkan hasil
+print("Mean Jarak S1-S1: ", mean_s1_s1_distance)
+print("Mean Jarak S1-S2: ", mean_s1_s2_distance)
+print("Mean Jarak S2-S2: ", mean_s2_s2_distance)
