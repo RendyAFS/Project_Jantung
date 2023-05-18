@@ -1,22 +1,21 @@
-import numpy as np
+# Mencari mean jarak s1-s1 
+array1 = [1, 3, 5, 10]
 
-def mean_distance(set1, set2):
-    distances = np.abs(np.subtract.outer(set1, set2))
-    mean = np.mean(distances)
-    return mean
+result1 = sum(array1[i] - array1[i-1] for i in range(1, len(array1))) / (len(array1) - 1)
 
-# Data set
-S1 = [1, 3, 5]
-S2 = [1, 6, 2]
+print(f"Hasil mean Jarak s1-s1 \n {sum(array1[i] - array1[i-1] for i in range(1, len(array1)))}/{(len(array1) - 1)} = {result1}\n")
 
-# Mean Jarak S1 - S1
-mean_s1_s1 = mean_distance(S1, S1)
-print("Mean Jarak S1 - S1:", mean_s1_s1)
+# Mencari mean jarak s2-s2 
+array2 = [2, 4, 6, 10, 12]
 
-# Mean Jarak S1 - S2
-mean_s1_s2 = mean_distance(S1, S2)
-print("Mean Jarak S1 - S2:", mean_s1_s2)
+result2 = sum(array2[i] - array2[i-1] for i in range(1, len(array2))) / (len(array2) - 1)
 
-# Mean Jarak S2 - S2
-mean_s2_s2 = mean_distance(S2, S2)
-print("Mean Jarak S2 - S2:", mean_s2_s2)
+print(f"Hasil mean Jarak s2-s2 \n {sum(array2[i] - array2[i-1] for i in range(1, len(array2)))}/{(len(array2) - 1)} = {result2}\n")
+
+# Mencari mean jarak s1-s2
+s1 = [1, 3, 1, 7]
+s2 = [2, 5, 3, 10]
+
+result3 = sum(s2[i] - s1[i] for i in range(len(s1))) / len(s1)
+
+print(f"Hasil mean Jarak s1-s2 \n {sum(s2[i] - s1[i] for i in range(len(s1)))}/{len(s1)} = {result3}")
