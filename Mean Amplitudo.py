@@ -1,21 +1,47 @@
-# Mencari mean jarak s1-s1 
-array1 = [1, 3, 5, 10]
+# MENCARI MEAN JARAK S1-S1
+import pandas as pd
 
-result1 = sum(array1[i] - array1[i-1] for i in range(1, len(array1))) / (len(array1) - 1)
+# Membaca data dari file tes.csv
+data = pd.read_csv("data mean amplitudo.csv")
 
-print(f"Hasil mean Jarak s1-s1 \n {sum(array1[i] - array1[i-1] for i in range(1, len(array1)))}/{(len(array1) - 1)} = {result1}\n")
+# Mendapatkan kolom s1 dari data
+s1_values = data["s1"].values
 
-# Mencari mean jarak s2-s2 
-array2 = [2, 4, 6, 10, 12]
+# Menghitung mean jarak S1
+mean_s1_distance = sum(s1_values[i] - s1_values[i-1] for i in range(1, len(s1_values))) / (len(s1_values) - 1)
 
-result2 = sum(array2[i] - array2[i-1] for i in range(1, len(array2))) / (len(array2) - 1)
+print(f"Mean Jarak S1-S1:\n{sum(s1_values[i] - s1_values[i-1] for i in range(1, len(s1_values)))} / {len(s1_values) - 1} = {mean_s1_distance}")
 
-print(f"Hasil mean Jarak s2-s2 \n {sum(array2[i] - array2[i-1] for i in range(1, len(array2)))}/{(len(array2) - 1)} = {result2}\n")
+print("\n")
 
-# Mencari mean jarak s1-s2
-s1 = [1, 3, 1, 7]
-s2 = [2, 5, 3, 10]
+# MENCARI MEAN JARAK S2-S2
+import pandas as pd
 
-result3 = sum(s2[i] - s1[i] for i in range(len(s1))) / len(s1)
+# Membaca data dari file tes.csv
+data = pd.read_csv("data mean amplitudo.csv")
 
-print(f"Hasil mean Jarak s1-s2 \n {sum(s2[i] - s1[i] for i in range(len(s1)))}/{len(s1)} = {result3}")
+# Mendapatkan kolom s1 dari data
+s2_values = data["s2"].values
+
+# Menghitung mean jarak S1
+mean_s12_distance = sum(s2_values[i] - s2_values[i-1] for i in range(1, len(s2_values))) / (len(s2_values) - 1)
+
+print(f"Mean Jarak S2-S2:\n{sum(s2_values[i] - s2_values[i-1] for i in range(1, len(s2_values)))} / {len(s2_values) - 1} = {mean_s12_distance}")
+
+
+print("\n")
+
+# MENCARI MEAN JARAK S1-S2
+import pandas as pd
+
+# Membaca data dari file tes.csv
+data = pd.read_csv("data mean amplitudo.csv")
+
+# Mendapatkan kolom s1 dari data
+s1_values = data["s1"].values
+s2_values = data["s2"].values
+
+# Menghitung mean jarak S1
+mean_s2_distance = sum(s2_values[i] - s1_values[i-1] for i in range(len(s2_values))) / (len(s2_values))
+
+print(f"Mean Jarak S1-S2:\n{sum(s2_values[i] - s1_values[i-1] for i in range(len(s2_values)))} / {len(s2_values)} = {mean_s2_distance}")
