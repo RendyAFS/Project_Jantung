@@ -2,7 +2,7 @@
 import pandas as pd
 
 # Membaca data dari file tes.csv
-data = pd.read_csv("data mean amplitudo.csv")
+data = pd.read_csv("data audio.csv")
 
 # Mendapatkan kolom s1 dari data
 s1_values = data["s1"].values
@@ -18,7 +18,7 @@ print("\n")
 import pandas as pd
 
 # Membaca data dari file tes.csv
-data = pd.read_csv("data mean amplitudo.csv")
+data = pd.read_csv("data audio.csv")
 
 # Mendapatkan kolom s1 dari data
 s2_values = data["s2"].values
@@ -35,7 +35,7 @@ print("\n")
 import pandas as pd
 
 # Membaca data dari file tes.csv
-data = pd.read_csv("data mean amplitudo.csv")
+data = pd.read_csv("data audio.csv")
 
 # Mendapatkan kolom s1 dari data
 s1_values = data["s1"].values
