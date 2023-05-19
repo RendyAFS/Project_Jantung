@@ -32,3 +32,5 @@ skewness_s1_s2 = sum((x - mean_s1_s2) ** 3 for x in s1_s2_differences) / (len(s1
 print("Skewness s1-s1:", skewness_s1_s1)
 print("Skewness s2-s2:", skewness_s2_s2)
 print("Skewness s1-s2:", skewness_s1_s2)
+
+
